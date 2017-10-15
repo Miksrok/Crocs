@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Crocs" verbose="1">
+    
+    <test name="ch_login_test">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+        <class name="com.fakecompany.www.tests.LoginTest"/>
+    </classes>
+</test>
+    <test name="ch_wrong_login_test">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="com.fakecompany.www.tests.WrongLoginTest"/>
+        </classes>
+    </test>
+
+</suite>
