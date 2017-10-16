@@ -18,21 +18,22 @@ public class MenFootwearPage {
 
     private By productCards = By.id("categoryGridProductCards");
     private By product = By.xpath("//div[@id='categoryGridProductCards']/ul/li[1]/div/div/div/div/div/div[@class='imageDiv']");
-    private By productLink = By.className("quickviewbutton-inner-left");
+    /*private By productLink = By.className("quickviewbutton-inner-left");*/
 
     public MenFootwearPage(WebDriver driver) {
         this.driver = driver;
         wait = new WebDriverWait(driver, 30);
     }
 
-    public void choseProduct() throws InterruptedException {
-        
+    public ProductPage choseProduct() throws InterruptedException {
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.productCards));
         WebElement product = driver.findElement(this.product);
         System.out.println(product);
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
                 ,product);
         product.click();
+        return new ProductPage(driver);
 
     }
 }

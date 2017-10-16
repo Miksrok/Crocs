@@ -2,6 +2,7 @@ package com.fakecompany.www.tests;
 
 import com.fakecompany.www.BaseScript;
 import com.fakecompany.www.pages.MenFootwearPage;
+import com.fakecompany.www.pages.ProductPage;
 import org.testng.annotations.Test;
 
 /**
@@ -10,6 +11,7 @@ import org.testng.annotations.Test;
 public class AddProductTest extends BaseScript{
 
     private MenFootwearPage menFootwearPage;
+    private ProductPage productPage;
 
     @Test
     public void addProductToCart() throws InterruptedException {
@@ -17,9 +19,9 @@ public class AddProductTest extends BaseScript{
         mainPage.openMainPage();
         mainPage.skipAdd();
         menFootwearPage = mainPage.clickMenFootwearLink();
-        menFootwearPage.choseProduct();
-        /*productPage.selectSize();
-        productPage.addToChart();*/
+        productPage = menFootwearPage.choseProduct();
+        productPage.selectSize();
+        productPage.addToCart();
 
 
     }
