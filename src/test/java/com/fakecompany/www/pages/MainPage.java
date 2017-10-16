@@ -18,6 +18,7 @@ public class MainPage {
     private WebDriverWait wait;
 
     private By signInButton = By.className("headerLoginLink");
+    private By menFootWearLink = By.id("men");
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -28,11 +29,14 @@ public class MainPage {
         driver.get("https://www.crocs.eu/");
     }
 
-    public AuthorizationPage clickSignInButton(){
+    public void skipAdd(){
         wait.withTimeout(15, TimeUnit.SECONDS);
         if(driver.findElement(By.id("cboxClose")).isDisplayed()){
             driver.findElement(By.id("cboxClose")).click();
         }
+    }
+    public AuthorizationPage clickSignInButton(){
+
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.signInButton));
         WebElement signInButton = driver.findElement(this.signInButton);
         signInButton.click();
@@ -40,4 +44,12 @@ public class MainPage {
     }
 
 
+    public MenFootwearPage clickMenFootwearLink() {
+
+        wait.until(ExpectedConditions.visibilityOfElementLocated(this.menFootWearLink));
+        WebElement menFootwearLink = driver.findElement(this.menFootWearLink);
+        menFootwearLink.click();
+        return new MenFootwearPage(driver);
+
+    }
 }

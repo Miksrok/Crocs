@@ -18,6 +18,7 @@ public class WrongLoginTest extends BaseScript {
     public void wrongLoginTest(String login, String password){
 
         mainPage.openMainPage();
+        mainPage.skipAdd();
         autorizationPage =  mainPage.clickSignInButton();
         Assert.assertTrue(autorizationPage.isAuthPage());
         customerPage = autorizationPage.enterLoginAndPassword(login, password);
