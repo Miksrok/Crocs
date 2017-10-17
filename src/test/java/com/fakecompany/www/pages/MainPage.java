@@ -29,7 +29,7 @@ public class MainPage {
         driver.get("https://www.crocs.eu/");
     }
 
-    public void skipAdd(){
+    public void skipAd(){
         wait.withTimeout(15, TimeUnit.SECONDS);
         if(driver.findElement(By.id("cboxClose")).isDisplayed()){
             driver.findElement(By.id("cboxClose")).click();

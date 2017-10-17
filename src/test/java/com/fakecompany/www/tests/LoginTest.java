@@ -15,7 +15,7 @@ public class LoginTest extends BaseScript {
     @Test(dataProvider = "getAuthorizationData", dataProviderClass = DataProv.class)
     public void signInTest(String login, String password){
         mainPage.openMainPage();
-        mainPage.skipAdd();
+        mainPage.skipAd();
         autorizationPage =  mainPage.clickSignInButton();
         Assert.assertTrue(autorizationPage.isAuthPage());
         customerPage = autorizationPage.enterLoginAndPassword(login, password);

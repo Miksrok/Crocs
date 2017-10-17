@@ -37,25 +37,20 @@ public abstract class BaseScript {
     @BeforeClass
     @Parameters("browser")
     public void setUp(String browser) {
-        //driver = new EventFiringWebDriver(getDriver(browser));
         driver = getDriver(browser);
-        /*driver.register(new EventHandler());*/
 
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
         mainPage = new MainPage(driver);
-        /*mainPage.openMainPage();
-        mainPage.setCountryCode(code);
-        mainPage.country(code);*/
     }
 
     @AfterClass
     public void tearDown() {
-        if (driver != null) {
+       /* if (driver != null) {
             driver.quit();
-        }
+        }*/
     }
 
 }

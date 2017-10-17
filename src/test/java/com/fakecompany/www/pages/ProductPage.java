@@ -46,10 +46,11 @@ public class ProductPage {
 
     }
 
-    public void viewCartAndCheckout(){
+    public CartShowPage viewCartAndCheckout(){
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.productCard));
         WebElement viewCartAndCheckoutButton = driver.findElement(this.viewCartAndCheckoutButton);
         viewCartAndCheckoutButton.click();
+        return new CartShowPage(driver);
 
     }
 }
