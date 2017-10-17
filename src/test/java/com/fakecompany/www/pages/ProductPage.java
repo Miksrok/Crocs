@@ -18,6 +18,8 @@ public class ProductPage {
     private By sizeButtonBlock = By.id("size-refine-text");
     private By sizeButton = By.xpath("//ul[@id='u']/li[1]/label/div/span[1]");
     private By productAddButton = By.id("product-add-btn");
+    private By productCard = By.id("cboxLoadedContent");
+    private By viewCartAndCheckoutButton = By.linkText("View Cart & Checkout");
 
     public ProductPage(WebDriver driver) {
         this.driver = driver;
@@ -28,9 +30,8 @@ public class ProductPage {
     public void selectSize() {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.sizeButtonBlock));
-        WebElement sizeButtonBlock = driver.findElement(this.sizeButtonBlock);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,sizeButtonBlock);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("window.scrollBy(0, 350)");
         WebElement sizeButton = driver.findElement(this.sizeButton);
         sizeButton.click();
 
@@ -42,6 +43,13 @@ public class ProductPage {
         WebElement productAddButton = driver.findElement(this.productAddButton);
         productAddButton.click();
         Thread.sleep(15000);
+
+    }
+
+    public void viewCartAndCheckout(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(this.productCard));
+        WebElement viewCartAndCheckoutButton = driver.findElement(this.viewCartAndCheckoutButton);
+        viewCartAndCheckoutButton.click();
 
     }
 }

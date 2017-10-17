@@ -22,7 +22,7 @@ public class AddProductTest extends BaseScript{
         productPage = menFootwearPage.choseProduct();
         productPage.selectSize();
         productPage.addToCart();
-
+        productPage.viewCartAndCheckout();
 
     }
 

@@ -16,7 +16,7 @@ public class MenFootwearPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private By productCards = By.id("categoryGridProductCards");
+    private By productCards = By.className("breadcrumbs");
     private By product = By.xpath("//div[@id='categoryGridProductCards']/ul/li[1]/div/div/div/div/div/div[@class='imageDiv']");
     /*private By productLink = By.className("quickviewbutton-inner-left");*/
 
@@ -29,9 +29,8 @@ public class MenFootwearPage {
 
         wait.until(ExpectedConditions.visibilityOfElementLocated(this.productCards));
         WebElement product = driver.findElement(this.product);
-        System.out.println(product);
-        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();"
-                ,product);
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("window.scrollBy(0, 250)");
         product.click();
         return new ProductPage(driver);
 
