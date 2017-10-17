@@ -1,8 +1,6 @@
 package com.fakecompany.www.model;
 
-/**
- * Created by Залізний Мозок on 17.10.2017.
- */
+
 public class Customer {
 
     private String firstName;

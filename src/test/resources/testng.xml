@@ -2,7 +2,7 @@
 
 <suite name="Crocs" verbose="1">
 
-   <!-- <test name="ch_login_test">
+    <test name="ch_login_test">
         <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.fakecompany.www.tests.LoginTest"/>
@@ -13,7 +13,7 @@
         <classes>
             <class name="com.fakecompany.www.tests.WrongLoginTest"/>
         </classes>
-    </test>-->
+    </test>
     <test name="ch_add_product_to_cart_test">
         <parameter name="browser" value="chrome"/>
         <classes>

@@ -26,11 +26,9 @@ public class AuthorizationPage {
     }
 
     public boolean isAuthPage(){
-        //wait.withTimeout(15, TimeUnit.SECONDS);
        String url =  driver.getCurrentUrl();
        System.out.println(url.equals("https://www.crocs.eu/on/demandware.store/Sites-crocs_eu-Site/en_ES/Login-Show"));
        return url.equals("https://www.crocs.eu/on/demandware.store/Sites-crocs_eu-Site/en_ES/Login-Show");
-
     }
 
     public CustomerPage enterLoginAndPassword(String login, String password) {
